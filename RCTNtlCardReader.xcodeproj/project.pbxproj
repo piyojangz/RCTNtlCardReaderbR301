@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186F925425468975009A9BB8 /* libiRockey301_ccid_V3.5.61_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186F925225468975009A9BB8 /* libiRockey301_ccid_V3.5.61_debug.a */; };
 		18B163CA21B65E1800105E89 /* RCTNtlCardReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B163C921B65E1800105E89 /* RCTNtlCardReader.m */; };
-		18B163CB21B65E1800105E89 /* RCTNtlCardReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18B163C821B65E1800105E89 /* RCTNtlCardReader.h */; };
+		18B163CB21B65E1800105E89 /* RCTNtlCardReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18B163C821B65E1800105E89 /* RCTNtlCardReader.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +26,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		18B163C521B65E1800105E89 /* libRCTNtlCardReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTNtlCardReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		182F34E521C26D8F0087108D /* libRCTNtlCardReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTNtlCardReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		183EE55A21C178F1004ECB37 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		183EE55C21C178F6004ECB37 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		183EE56521C179FC004ECB37 /* libiRockey301_ccid_V1.32.5_Debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiRockey301_ccid_V1.32.5_Debug.a; path = "../../../../../../Downloads/FEITIAN_MOBILE_READERS-master/iOS SDK/iReader for Appstore/iReader/iReader/libiRockey301_ccid_V1.32.5_Debug.a"; sourceTree = "<group>"; };
+		186F925225468975009A9BB8 /* libiRockey301_ccid_V3.5.61_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.61_debug.a; sourceTree = "<group>"; };
+		186F925325468975009A9BB8 /* libiRockey301_ccid_V3.5.61_release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.61_release.a; sourceTree = "<group>"; };
+		18A997DD21BFFB7D0037092C /* ft301u.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ft301u.h; sourceTree = "<group>"; };
 		18B163C821B65E1800105E89 /* RCTNtlCardReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNtlCardReader.h; sourceTree = "<group>"; };
 		18B163C921B65E1800105E89 /* RCTNtlCardReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTNtlCardReader.m; sourceTree = "<group>"; };
+		18B8FE5C21BFC007005E39E9 /* ReaderInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderInterface.h; sourceTree = "<group>"; };
+		18B8FE5D21BFC007005E39E9 /* wintypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wintypes.h; sourceTree = "<group>"; };
+		18B8FE5E21BFC007005E39E9 /* winscard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = winscard.h; sourceTree = "<group>"; };
+		18DFBF7E21C00FF60074BB67 /* libiRockey301_ccid_V3.5.29_Debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.29_Debug.a; sourceTree = "<group>"; };
+		18DFBF7F21C00FF60074BB67 /* libiRockey301_ccid_V3.5.16_Debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.16_Debug.a; sourceTree = "<group>"; };
+		18DFBF8021C00FF60074BB67 /* libiRockey301_ccid_V3.5.29_Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.29_Release.a; sourceTree = "<group>"; };
+		18DFBF8121C00FF70074BB67 /* libiRockey301_ccid_V3.5.16_Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.16_Release.a; sourceTree = "<group>"; };
+		18DFBF8D21C0109B0074BB67 /* libiRockey301_ccid.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid.a; sourceTree = "<group>"; };
+		18DFBF8F21C010BF0074BB67 /* libiRockey301_ccid_V1.32.5_Debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V1.32.5_Debug.a; sourceTree = "<group>"; };
+		A687917E239751A900F868D9 /* libiRockey301_ccid_V3.5.52_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.52_debug.a; sourceTree = "<group>"; };
+		A687917F239751A900F868D9 /* libiRockey301_ccid_V3.5.52_release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiRockey301_ccid_V3.5.52_release.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186F925425468975009A9BB8 /* libiRockey301_ccid_V3.5.61_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,25 +64,66 @@
 			isa = PBXGroup;
 			children = (
 				18B163C721B65E1800105E89 /* RCTNtlCardReader */,
-				18B163C621B65E1800105E89 /* Products */,
+				18B8FE6521BFC031005E39E9 /* Frameworks */,
+				182F34E521C26D8F0087108D /* libRCTNtlCardReader.a */,
 			);
-			sourceTree = "<group>";
-		};
-		18B163C621B65E1800105E89 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				18B163C521B65E1800105E89 /* libRCTNtlCardReader.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		18B163C721B65E1800105E89 /* RCTNtlCardReader */ = {
 			isa = PBXGroup;
 			children = (
+				18B8FE5A21BFC007005E39E9 /* Lib */,
 				18B163C821B65E1800105E89 /* RCTNtlCardReader.h */,
 				18B163C921B65E1800105E89 /* RCTNtlCardReader.m */,
 			);
 			path = RCTNtlCardReader;
+			sourceTree = "<group>";
+		};
+		18B8FE5A21BFC007005E39E9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				18B8FE5B21BFC007005E39E9 /* include */,
+				18B8FE6021BFC007005E39E9 /* lib */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		18B8FE5B21BFC007005E39E9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				18A997DD21BFFB7D0037092C /* ft301u.h */,
+				18B8FE5C21BFC007005E39E9 /* ReaderInterface.h */,
+				18B8FE5D21BFC007005E39E9 /* wintypes.h */,
+				18B8FE5E21BFC007005E39E9 /* winscard.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		18B8FE6021BFC007005E39E9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				186F925225468975009A9BB8 /* libiRockey301_ccid_V3.5.61_debug.a */,
+				186F925325468975009A9BB8 /* libiRockey301_ccid_V3.5.61_release.a */,
+				A687917E239751A900F868D9 /* libiRockey301_ccid_V3.5.52_debug.a */,
+				A687917F239751A900F868D9 /* libiRockey301_ccid_V3.5.52_release.a */,
+				18DFBF8F21C010BF0074BB67 /* libiRockey301_ccid_V1.32.5_Debug.a */,
+				18DFBF8D21C0109B0074BB67 /* libiRockey301_ccid.a */,
+				18DFBF7F21C00FF60074BB67 /* libiRockey301_ccid_V3.5.16_Debug.a */,
+				18DFBF8121C00FF70074BB67 /* libiRockey301_ccid_V3.5.16_Release.a */,
+				18DFBF7E21C00FF60074BB67 /* libiRockey301_ccid_V3.5.29_Debug.a */,
+				18DFBF8021C00FF60074BB67 /* libiRockey301_ccid_V3.5.29_Release.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		18B8FE6521BFC031005E39E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				183EE56521C179FC004ECB37 /* libiRockey301_ccid_V1.32.5_Debug.a */,
+				183EE55C21C178F6004ECB37 /* ExternalAccessory.framework */,
+				183EE55A21C178F1004ECB37 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,7 +143,7 @@
 			);
 			name = RCTNtlCardReader;
 			productName = RCTNtlCardReader;
-			productReference = 18B163C521B65E1800105E89 /* libRCTNtlCardReader.a */;
+			productReference = 182F34E521C26D8F0087108D /* libRCTNtlCardReader.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +168,7 @@
 				en,
 			);
 			mainGroup = 18B163BC21B65E1800105E89;
-			productRefGroup = 18B163C621B65E1800105E89 /* Products */;
+			productRefGroup = 18B163BC21B65E1800105E89;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -180,7 +240,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -233,9 +294,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -244,24 +307,66 @@
 		18B163CF21B65E1800105E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7,
+					armv7s,
+				);
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QRAA467396;
-				OTHER_LDFLAGS = "-ObjC";
+				ENABLE_BITCODE = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/RCTNtlCardReader/Lib/lib";
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DRUNTIME_IL2CPP=1";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = all;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		18B163D021B65E1800105E89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7,
+					armv7s,
+				);
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QRAA467396;
-				OTHER_LDFLAGS = "-ObjC";
+				ENABLE_BITCODE = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/RCTNtlCardReader/Lib/lib";
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DRUNTIME_IL2CPP=1";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = all;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
