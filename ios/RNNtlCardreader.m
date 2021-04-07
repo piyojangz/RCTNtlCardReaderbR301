@@ -1,12 +1,6 @@
-//
-//  RCTNtlCardReader.m
-//  RCTNtlCardReader
-//
-//  Created by Breeshy Sama on 4/12/2561 BE.
-//  Copyright © 2561 Ngern Tid Lor. All rights reserved.
-//
+// RNNtlCardreader.m
 
-#import "RCTNtlCardReader.h"
+#import "RNNtlCardreader.h"
 #import "winscard.h"
 #import "ft301u.h"
 
@@ -18,6 +12,7 @@ BOOL _autoConnect;
 SCARDHANDLE gCardHandle;
 NSString *gBluetoothID;
 static NSString *autoConnectKey = @"autoConnect";
+
 typedef NS_ENUM(NSInteger, FTReaderType) {
     FTReaderiR301 = 0,
     FTReaderbR301 = 1,
@@ -27,7 +22,7 @@ typedef NS_ENUM(NSInteger, FTReaderType) {
 };
 
 
-@implementation RCTNtlCardReader
+@implementation RNNtlCardreader
 {
     NSMutableArray *_deviceList;
     BOOL _isAutoConnect;
@@ -99,19 +94,69 @@ RCT_EXPORT_METHOD(getSN: (RCTResponseSenderBlock)callback) {
 
 
 RCT_EXPORT_METHOD(didEventCardisConnect : (RCTResponseSenderBlock)callback) {
+    // NSLog (@"bb :: didEventCardisConnect = %i", _isCardConnect);
     callback(@[[NSNull null], @(_isCardConnect)]);
 }
 
+RCT_EXPORT_METHOD(getInitStatus : (RCTResponseSenderBlock)callback) {
+    // NSLog (@"bb :: didEventCardisConnect = %i", _isCardConnect);
+    LONG isValid = SCardIsValidContext(gContxtHandle);
+    
+    BOOL isInit = false;
+    if(SCARD_S_SUCCESS == isValid){
+        isInit = true;
+    } else {
+        isInit = false;
+    }
+    callback(@[@(isInit)]);
+}
 
-RCT_EXPORT_METHOD(connectCardReader) {
+//RCT_EXPORT_METHOD(resetConnectCard : (RCTResponseSenderBlock)callback) {
+//    _isCardConnect = false;
+//    callback(@[[NSNull null], @(_isCardConnect)]);
+//}
+
+
+RCT_EXPORT_METHOD(connectCardReader : (RCTResponseSenderBlock)callback) {
     //    interface = [[ReaderInterface alloc] init];
     //    [interface setDelegate:self];
-    [self connectCard];
+        
+//    [self connectCard];
+    
+    DWORD dwActiveProtocol = -1;
+    NSString *reader = @"bR301";
+
+    LONG ret = SCardConnect(gContxtHandle, [reader UTF8String], SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0 | SCARD_PROTOCOL_T1, &gCardHandle, &dwActiveProtocol);
+    NSLog (@"bb :: ret = %i", ret);
+
+    BOOL isCardConnected = false;
+    if(ret == 0){
+        isCardConnected = true;
+    } else {
+        isCardConnected = false;
+    }
+    callback(@[@(isCardConnected)]);
+    if(ret != 0){
+        //        NSString *errorMsg = [[Tools shareTools] mapErrorCode:ret];
+        //        [[Tools shareTools] showError:errorMsg];
+        return;
+    }
+
+
+    unsigned char patr[33] = {0};
+    DWORD len = sizeof(patr);
+    ret = SCardGetAttrib(gCardHandle,NULL, patr, &len);
+    if(ret != SCARD_S_SUCCESS)
+    {
+        NSLog(@"SCardGetAttrib error %08x",ret);
+    }
+    NSLog (@"bb :: connectCard = %i", _isCardConnect);
 }
 
 RCT_EXPORT_METHOD(disconnectCardReader) {
     //    interface = [[ReaderInterface alloc] init];
     //    [interface setDelegate:self];
+    NSLog (@"bb :: disconnectCardReader = %i", _isCardConnect);
     [self disconnectCard];
 }
 
@@ -315,9 +360,10 @@ RCT_EXPORT_METHOD(sendCommand: (RCTResponseSenderBlock)callback)
         
     }
     NSLog (@"%@", rsStr);
+    NSLog (@"bb :: sendCommand = %i", _isCardConnect);
     callback(@[[NSNull null],idCardArray]);
     
-} 
+}
 
 
 //init readerInterface and card context
@@ -353,7 +399,8 @@ RCT_EXPORT_METHOD(sendCommand: (RCTResponseSenderBlock)callback)
     
     rv = SCardStatus(gContxtHandle, (LPSTR) NULL, &dwReaderLen,
                      &dwState, &dwProt, NULL, &dwAtrLen );
-    
+    NSLog(@"bb :: statusCard %i", rv);
+
     if ( rv == SCARD_S_SUCCESS )
     {
         return true;
@@ -371,7 +418,7 @@ RCT_EXPORT_METHOD(sendCommand: (RCTResponseSenderBlock)callback)
     NSString *reader = @"bR301";
     
     LONG ret = SCardConnect(gContxtHandle, [reader UTF8String], SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0 | SCARD_PROTOCOL_T1, &gCardHandle, &dwActiveProtocol);
-    
+//    NSLog (@"bb :: ret = %i", ret);
     if(ret != 0){
         //        NSString *errorMsg = [[Tools shareTools] mapErrorCode:ret];
         //        [[Tools shareTools] showError:errorMsg];
@@ -386,14 +433,16 @@ RCT_EXPORT_METHOD(sendCommand: (RCTResponseSenderBlock)callback)
     {
         NSLog(@"SCardGetAttrib error %08x",ret);
     }
+    NSLog (@"bb :: connectCard = %i", _isCardConnect);
 }
 
 
 - (void)disconnectCard {
-    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         SCardDisconnect(gCardHandle, SCARD_UNPOWER_CARD);
     });
+    NSLog (@"bb :: disconnectCard = %i", _isCardConnect);
+//    _isCardConnect = false;
 }
 
 
@@ -414,11 +463,15 @@ RCT_EXPORT_METHOD(sendCommand: (RCTResponseSenderBlock)callback)
     return [NSString stringWithUTF8String:readers];
 }
 
-
+//- (BOOL) isCardAttached;
 
 - (void)cardInterfaceDidDetach:(BOOL)attached {
     // DID METHOD WHEN PUSH CARD OR REJECT CARD
+    
+//    NSLog (@"bb :: isCardAttached = %i", isCardAttached);
     _isCardConnect = attached;
+    // NSLog (@"bb :: attached = %i", attached);
+    // NSLog (@"bb :: isInsertCard = %i", _isCardConnect);
     if (attached) {
         NSLog(@"card present");
         
