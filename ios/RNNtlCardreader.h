@@ -1,13 +1,12 @@
-//
-//  RCTNtlCardReader.h
-//  RCTNtlCardReader
-//
-//  Created by Breeshy Sama on 4/12/2561 BE.
-//  Copyright © 2561 Ngern Tid Lor. All rights reserved.
-//
+// RNNtlCardreader.h
+#if __has_include("RCTBridgeModule.h")
+#import "RCTBridgeModule.h"
+#else
 #import <React/RCTBridgeModule.h>
+#endif
 #import "ReaderInterface.h"
-@interface RCTNtlCardReader : NSObject <RCTBridgeModule,ReaderInterfaceDelegate>
+
+@interface RNNtlCardreader : NSObject <RCTBridgeModule,ReaderInterfaceDelegate>
 
 + (NSString *)moduleName;
 
@@ -20,3 +19,4 @@
 - (void)readerInterfaceDidChange:(BOOL)attached bluetoothID:(NSString *)bluetoothID;
 
 @end
+  
